@@ -50,7 +50,7 @@ exports.signin = (req,res) => {
             })
         }
         //token 
-        const token = jwt.sign({_id: user._id},process.env.SECRET)
+        const token = jwt.sign({_id: user._id},"gautamisonline")
         //cookie
         res.cookie("token",token,{expire: new Date() + 9999});
 
@@ -70,7 +70,7 @@ exports.signout = (req,res) => {
 
 //protected routes
 exports.isSignedIn = ejwt({
-    secret: process.env.SECRET,
+    secret: "gautamisonline",
     userProperty: "auth"
 });
 

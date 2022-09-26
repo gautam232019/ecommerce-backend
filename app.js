@@ -14,7 +14,7 @@ const orderRoutes = require('./routes/order')
 const stripeRoutes = require('./routes/stripePayment')
 
 //Db Connection
-mongoose.connect(process.env.DATABASE,{
+mongoose.connect(`mongodb+srv://admin:12345@cluster0.kcd8el7.mongodb.net/ecommerceApp?retryWrites=true&w=majority`,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
